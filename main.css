@@ -145,6 +145,8 @@ section.portfolio .swiper-button-next{
   border-radius: 50%;
   }
 section.portfolio .swiper-button-next{ left: 100%;right: auto; }
+
+/*留言*/
 section.message > ol{
   max-width: 700px;
   margin: 0 auto;
@@ -153,5 +155,6 @@ section.message > ol{
 section.message > ol > li {
   padding: 16px;
   border-bottom: 1px solid #DDD;
+  color: green;
 }
 

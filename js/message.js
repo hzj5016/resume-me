@@ -1,5 +1,11 @@
 !function () {
     let model = {
+        //初始化
+        init: function () {
+            let APP_ID = '4HnDM3exQgz0UydRDK6tChSi-gzGzoHsz'
+            let APP_KEY = 'T0C5QgRcybTSFbYTq6LYEu6l'
+            AV.init({ appId: APP_ID, appKey: APP_KEY })
+        },
         //获取数据
         fetch: function () {
             let query = new AV.Query('Message');
@@ -25,14 +31,9 @@
             this.view = view
             this.messageList = view.querySelector('#messageList')
             this.form = view.querySelector('#postMessageForm')
-            this.initAv()
+            this.model.init()
             this.loadMessages()
             this.bindEvents()
-        },
-        initAv: function () {
-            let APP_ID = '4HnDM3exQgz0UydRDK6tChSi-gzGzoHsz'
-            let APP_KEY = 'T0C5QgRcybTSFbYTq6LYEu6l'
-            AV.init({ appId: APP_ID, appKey: APP_KEY })
         },
         loadMessages: function () {
             this.model.fetch().then((messages) => {
